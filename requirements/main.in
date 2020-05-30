@@ -1,0 +1,6 @@
+django-environ
+django-prometheus
+django-redis
+django
+psycopg2-binary
+redis

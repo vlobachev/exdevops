@@ -1,0 +1,11 @@
+
+.data/
+*.sqlite3
+*.csv
+*.pyc
+__pycache__
+celerybeat-schedule
+
+.coverage
+coverage.xml
+pylint.svg

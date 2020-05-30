@@ -1,0 +1,11 @@
+pip-tools
+black
+isort
+pycodestyle
+pylint-django
+pylint<2.5.0
+pytest-cov
+pytest-django
+pytest-env
+pytest-mock
+pytest
