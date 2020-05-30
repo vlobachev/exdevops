@@ -49,11 +49,9 @@ USE_TZ = False
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
-    "formatters": {"json": {
-        "format": "%(message)s",
-        "()": "src.common.JsonFormatter",
-        "fields": ("status", "path", "spent"),
-    }},
+    "formatters": {
+        "json": {"format": "%(message)s", "()": "src.common.JsonFormatter", "fields": ("status", "path", "spent")}
+    },
     "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "json", "level": "DEBUG"}},
     "loggers": {"src": {"handlers": ["console"], "level": env("APP_LOG_LEVEL", default="DEBUG"), "propagate": False}},
 }

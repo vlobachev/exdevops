@@ -1,6 +1,6 @@
+import json
 import logging
 import time
-import json
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +13,10 @@ class RequestLogMiddleware:
         start = time.perf_counter()
         logger.info("start request", extra={"path": request.path})
         response = self.get_response(request)
-        logger.info("finish request", extra={"path": request.path, "status": response.status_code, "spent": time.perf_counter() - start})
+        logger.info(
+            "finish request",
+            extra={"path": request.path, "status": response.status_code, "spent": time.perf_counter() - start},
+        )
         return response
 
 
