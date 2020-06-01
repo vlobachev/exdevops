@@ -55,6 +55,3 @@ LOGGING = {
     "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "json", "level": "DEBUG"}},
     "loggers": {"src": {"handlers": ["console"], "level": env("APP_LOG_LEVEL", default="DEBUG"), "propagate": False}},
 }
-
-# STATIC_URL = "/static/"
-# STATIC_ROOT = "/tmp/.static"

@@ -1,9 +1,9 @@
 # Simple app
 
-###App that should be deployed
+### App that should be deployed
 
 That is a super service that is very important for our business.
-We wrote this service in python3.8 programming language and we use [django](https://www.djangoproject.com/) as a web framework. 
+We wrote this service in python3.8 programming language and we used [django](https://www.djangoproject.com/) as a web framework. 
 
 
 #### How to run service locally (for developers):
@@ -49,8 +49,8 @@ make checks
 
 ### Production 
 1) The application should run on Linux Server
-2) It should be served by a WSGI server. Read how to deploy Django app (here)[https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/]
-3) The app should be run with enviro APP_CONFIG_PATH=./configs/prod.env
+2) It should be served by a WSGI server. Read how to deploy Django app [here](https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/)
+3) The app should be run with environment value APP_CONFIG_PATH=./configs/prod.env
 4) Use Postgres as database (DSN psql://user:password@db/app?application_name=simple_app) 
 5) Use Redis as Cache
 
