@@ -1,5 +1,5 @@
-from django.urls import path
+from django.urls import re_path
 
 from . import views
 
-urlpatterns = [path("ping/", views.ping, name="ping"), path("status/", views.status, name="status")]
+urlpatterns = [re_path(r"ping/?", views.ping, name="ping"), re_path(r"status/?", views.status, name="status")]

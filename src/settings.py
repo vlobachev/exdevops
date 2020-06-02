@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "django.middleware.common.CommonMiddleware",
     "src.common.RequestLogMiddleware",
     "django_prometheus.middleware.PrometheusBeforeMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -33,7 +34,7 @@ ROOT_URLCONF = "src.urls"
 
 WSGI_APPLICATION = "src.wsgi.application"
 ASGI_APPLICATION = "src.asgi.application"
-APPEND_SLASH = True
+APPEND_SLASH = False
 
 # Database
 DATABASES = {"default": env.db()}
@@ -48,10 +49,13 @@ USE_TZ = False
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": False,
     "formatters": {
         "json": {"format": "%(message)s", "()": "src.common.JsonFormatter", "fields": ("status", "path", "spent")}
     },
     "handlers": {"console": {"class": "logging.StreamHandler", "formatter": "json", "level": "DEBUG"}},
-    "loggers": {"src": {"handlers": ["console"], "level": env("APP_LOG_LEVEL", default="DEBUG"), "propagate": False}},
+    "loggers": {
+        "src": {"handlers": ["console"], "level": env("APP_LOG_LEVEL", default="DEBUG"), "propagate": False},
+        "django.request": {"handlers": [], "level": "NOTSET", "propagate": False},
+    },
 }
