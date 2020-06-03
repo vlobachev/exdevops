@@ -8,6 +8,7 @@ env.read_env(env("APP_CONFIG_PATH", default="./configs/local.env"))
 APP_NAME = "simple app"
 APP_VERSION = os.getenv("APP_VERSION")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+README_PATH = os.path.join(BASE_DIR, "README.md")
 
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = env.bool("DJANGO_DEBUG", False)

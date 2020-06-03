@@ -11,6 +11,7 @@ CHECKS = (
     checks.cache_class,
     checks.python_version,
     checks.version,
+    checks.user_privileges,
 )
 
 

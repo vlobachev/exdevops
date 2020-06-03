@@ -50,9 +50,10 @@ make checks
 ### Production 
 1) The application should run on Linux Server
 2) It should be served by a WSGI server. Read how to deploy Django app [here](https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/)
-3) The app should be run with environment value APP_CONFIG_PATH=./configs/prod.env
+3) The app should be run with environment value `APP_CONFIG_PATH=./configs/prod.env`
 4) Use Postgres as database (DSN psql://user:password@db/app?application_name=simple_app) 
 5) Use Redis as Cache
-
+6) Do not run the application with root privileges
+7) App should provide version (last git commit hash or last tag). Use `APP_VERSION` environment value 
 
 Check your deploy with a status entry point and wrk (or other benchmark tool)

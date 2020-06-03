@@ -1,3 +1,4 @@
+import os
 import sys
 
 from django_redis.cache import RedisCache
@@ -52,6 +53,12 @@ def python_version():
 
 
 def version():
-    if not __version__:
+    if not __version__ or __version__ == "dev":
         return "app version should be defined"
+    return None
+
+
+def user_privileges():
+    if os.access(__file__, os.W_OK):
+        return f"app process should NOT have access to write files"
     return None
